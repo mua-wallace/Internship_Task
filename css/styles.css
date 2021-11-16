@@ -656,23 +656,23 @@ header .nav-toggler.show span:last-child {
     }
 }
 
-/* pricing section   */
-.container  .top {
+/* start of the pricing section styles  */
+.pricing-section .top {
     text-align: center;
 }
 
-.pricing-section  .top h3 {
+.pricing-section .top h3 {
     font-weight: 600;
 }
 
-.pricing-section .container .top p {
+.pricing-section .top p {
     margin: 0;
     font-size: 1.3em;
     line-height: 1.2;
     margin-top: 1em;
 }
 
-.pricing-section  .toggler-con {
+.pricing-section .toggler-con {
     width: fit-content;
     display: flex;
     justify-content: center;
@@ -864,10 +864,106 @@ header .nav-toggler.show span:last-child {
     }
 }
 
+/* start of the footer styles  */
+footer {
+    padding: 2rem 0;
+    background-color: var(--primary);
+    color: var(--white);
+}
 
+footer .container .sec-1 {
+    width: 100%;
+    margin-bottom: 2em;
+}
 
+footer .container .sec-1 .logo {
+    width: 150px;
+    margin-bottom: 1em;
+}
 
+footer .container .sec-1 p {
+    font-size: 1em;
+    color: var(--white);
+}
 
+footer .container .sec-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1em;
+}
 
+footer .container .sec-2 .sub {
+    width: 100%;
+    color: var(--white);
+    margin-bottom: 2em;
+}
+
+footer .container .sec-2 .sub .title {
+    font-size: 1em;
+    font-weight: 600;
+    margin-bottom: 1em;
+    color: var(--white);
+}
+
+footer .container .sec-2 .sub ul li {
+    margin-bottom: .5em;
+}
+
+footer .container .sec-2 .sub ul a {
+    color: var(--white);
+    font-size: 1em;
+}
+
+footer .container .sec-2 .sub ul a:hover {
+    text-decoration: underline;
+}
+
+footer .footer-bottom .container p {
+    color: var(--white);
+    line-height: 1.3;
+}
+
+footer .footer-bottom .container p span {
+    color: var(--white);
+    font-size: 1.5em;
+}
+
+/* large screens and larger */
+@media screen and (min-width: 1225px) {
+    footer {
+        padding: 3em 0;
+    }
+
+    footer .container {
+        display: flex;
+    }
+
+    footer .container .sec-1 {
+        width: 40%;
+        margin-bottom: 0;
+    }
+
+    footer .container .sec-1 p {
+        width: 80%;
+    }
+
+    footer .container .sec-2 {
+        width: 60%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    footer .container .sec-2 .sub .title {
+        margin-bottom: 2em;
+    }
+
+    footer .container .sec-2 .sub ul li {
+        margin-bottom: 1em;
+    }
+
+    footer .footer-bottom {
+        margin-top: 2em;
+    }
+}
 
 
