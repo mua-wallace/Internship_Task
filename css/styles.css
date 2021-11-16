@@ -1,0 +1,873 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;1,500&display=swap');
+
+
+:root {
+    --primary: #B00000;
+    --primary-light: #b90b0b26;
+    --text: #0f0f11;
+    --text-light: #474950;
+    --yellow: #bea317;
+    --white: #fff;
+    --bg-light: #6f7781;
+    --border-color: #C4C4C4;
+    --light-gray: #D6D4D4;
+    --border-radius: 10px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    transition-duration: 0.3s;
+    list-style-type: none;
+    border: none;
+    outline: none;
+    color: var(--text);
+}
+
+
+
+body {
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    color: var(--text);
+}
+
+
+
+/* Core styles  */
+h1,
+h2,
+h3,
+h4,
+h5,
+a,
+h6 {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text);
+}
+
+h1 {
+    font-size: 2.5em;
+    line-height: 1.3;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 2.3em;
+    line-height: 1.2;
+}
+
+h3 {
+    font-size: 2em;
+    line-height: 1.2;
+}
+
+p {
+    font-size: 1em;
+    line-height: 1.5;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+section {
+    padding: 3em 0;
+}
+
+
+
+
+header {
+    height: 50px;
+    background-color: var(--white);
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 4;
+    display: flex;
+    align-items: center;
+}
+ .container {
+    display: flex;
+    width: 80%;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 6em;
+}
+header .logo {
+    height: 25px;
+}
+header nav {
+    position: fixed;
+    top: 50px;
+    left: -100%;
+    background-color: var(--white);
+    height: calc(100% - 50px);
+    z-index: 4;
+    padding: 1em;
+    width: 80%;
+    border-top: 1px solid var(--border-color);
+}
+
+header nav.show {
+    left: 0;
+}
+
+header nav::after {
+    content: '';
+    display: block;
+    width: 20%;
+    height: calc(100% - 50px);
+    background-color: rgba(0, 0, 0, 0.479);
+    position: fixed;
+    z-index: 3;
+    right: 100%;
+    top: 50px;
+}
+header nav.show::after {
+    right: 0;
+    transition-duration: .3s;
+}
+header nav a {
+    display: block;
+    width: 100%;
+    font-size: 1em;
+    padding: 1em 0;
+    border-bottom: 1px solid var(--border-color);
+}
+header .container > div {
+    display: flex;
+    align-items: center;
+}
+
+header .phone {
+    display: flex;
+    align-items: center;
+    margin-right: 1rem;
+}
+header .phone img {
+    width: 20px;
+    margin-right: 0.3em;
+    margin-top: 0.3em;
+}
+header .nav-toggler {
+    width: 30px;
+    height: 20px;
+    position: relative;
+}
+
+header .nav-toggler span {
+    display: block;
+    width: 100%;
+    height: 12px;
+    background-color: var(--text);
+    position: absolute;
+}
+
+header .nav-toggler.show {
+    width: 25px;
+
+}
+
+header .nav-toggler span:first-child {
+    top: 0;
+}
+
+header .nav-toggler span:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+header .nav-toggler span:last-child {
+    bottom: 0;
+}
+header .nav-toggler.show span:first-child {
+    top: 35% ;
+    transform: rotate(45deg) !important;
+}
+
+header .nav-toggler.show span:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+}
+
+header .nav-toggler.show span:last-child {
+    bottom: 50% !important;
+    transform: rotate(-45deg);
+}
+
+/* medium size screens (tablets)and larger */
+@media screen and (min-width: 768px) {
+    header {
+        height: 60px;
+    }
+    header nav {
+        top: 60px;
+        height: calc(100% - 60px);
+        z-index: 4;
+        padding: 2em;
+        width: 60%;
+    }
+    header nav::after {
+        width: 40%;
+        height: calc(100% - 60px);
+        top: 60px;
+    }
+}
+
+/* large screens and larger */
+@media screen and (min-width: 1225px) {
+    header .logo {
+        height: 45px;
+    }
+    header nav {
+        position: relative;
+        top: 0;
+        left: 0;
+        background-color: var(--white);
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        z-index: 4;
+        padding: 0 2em;
+        margin: 0 1em;
+        width: 100%;
+        border-top: none;
+        border-right: 1px solid var(--border-color);
+    }
+    
+    header nav::after {
+        display: none;
+    }
+    header nav ul {
+        display: flex;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    header nav ul li {
+        margin: 0 .5em;
+    }
+    header nav a {
+        display: block;
+        font-size: 1em;
+        padding: .3em 0;
+        border-bottom: none;
+        position: relative;
+        width: fit-content;
+        font-weight: 700;
+    }
+    header nav a::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 2px;
+        background-color: var(--primary);
+        transition-duration: 0.3s;
+    }
+    header nav a.active::after,
+    header nav a:hover::after {
+        width: 70%;
+        transition-duration: 0.3s;
+    }
+    header .container > div {
+        display: flex;
+        align-items: center;
+    }
+    header .phone {
+        font-weight: 600;
+    }
+    header .nav-toggler {
+        display: none;
+    }
+}
+
+/* start of home / hero-section styles  */
+.hero-section {
+    margin-top: 100px;
+    margin-bottom: 3em;
+}
+
+.hero-section .sec-1 {
+    width: 100%;
+}
+
+.hero-section .nav {
+    width: 100%;
+    margin-bottom: 2em;
+}
+
+.hero-section .nav ul {
+    width: fit-content;
+    display: flex;
+    border-bottom: 2px solid var(--light-gray);
+}
+
+.hero-section .nav li {
+    padding: .3em 1em;
+    color: var(--light-gray);
+    position: relative;
+    display: block;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+/* extra small screens and larger */
+@media only screen and (max-width: 360px) {
+    .hero-section .nav li {
+        padding: .3em .5em;
+    }
+}
+
+.hero-section .nav li::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background-color: var(--light-gray);
+}
+
+.hero-section .nav li.active,
+.hero-section .nav li.active:hover {
+    color: var(--primary);
+}
+
+.hero-section .nav li.active::after,
+.hero-section .nav li.active:hover:after {
+    background-color: var(--primary);
+}
+
+.hero-section .nav li:hover {
+    color: var(--primary-light);
+}
+
+.hero-section .nav li:hover::after {
+    background-color: var(--primary-light);
+}
+
+.hero-section .sec-1 {
+    position: relative;
+}
+
+.hero-section .sec-1 .content {
+    width: 100%;
+    height: fit-content;
+}
+
+.hero-section .sec-1 .content .content-sub {
+    width: 100%;
+    display: none;
+}
+
+.hero-section .sec-1 .content .content-sub.active {
+    opacity: 1;
+    z-index: 2;
+    display: block;
+}
+
+.hero-section .sec-1 .content h1 {
+    margin-bottom: 1rem;
+}
+
+.hero-section .sec-1 .content p {
+    font-size: 1em;
+    color: var(--text-light);
+    margin-bottom: 1em;
+}
+
+.hero-section .sec-1 .content .btns {
+    width: 100%;
+}
+
+.hero-section .sec-1 .content .btns .btn {
+    width: 100%;
+    text-align: center;
+    margin-bottom: .5em;
+}
+
+/* medium size screens (tablets)and larger */
+@media screen and (min-width: 768px) {
+    .hero-section .sec-1 .content h1 {
+        font-size: 3.3em;
+    }
+
+    .hero-section .sec-1 .content p {
+        width: 60%;
+    }
+
+    .hero-section .sec-1 .content .btns {
+        display: flex;
+    }
+
+    .hero-section .sec-1 .content .btns .btn {
+        margin-bottom: 0;
+        margin-right: 1em;
+        width: fit-content;
+    }
+}
+
+/* large size screens and larger */
+@media screen and (min-width: 1225px) {
+    .hero-section .con {
+        display: flex;
+    }
+
+    .hero-section nav {
+        margin-top: 2em;
+    }
+
+    .hero-section .sec-1 {
+        width: 60%;
+    }
+
+    .hero-section .sec-1 .content h1 {
+        width: 80%;
+    }
+}
+
+.hero-section .sec-2 {
+    width: 100%;
+    margin-top: 2em;
+    position: relative;
+}
+
+.hero-section .sec-2 img {
+    width: 100%;
+    /* display: none; */
+}
+
+.hero-section .sec-2 img.abstract {
+    position: absolute;
+}
+
+.hero-section .sec-2 img.abstract.img-1 {
+    left: -15px;
+    top: 60%;
+    width: 30px;
+    animation-delay: .5s;
+}
+
+.hero-section .sec-2 img.abstract.img-2 {
+    right: -10px;
+    top: 10%;
+    width: 30px;
+    animation-delay: 1.5s;
+}
+
+.hero-section .sec-2 img.abstract.img-3 {
+    right: -15px;
+    top: 80%;
+    width: 50px;
+}
+
+/* medium size screens (tablets)and larger */
+@media screen and (min-width: 768px) {
+    .hero-section .sec-2 {
+        width: 100%;
+        height: 300px;
+    }
+
+    .hero-section .sec-2 img:first-child {
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+/* large size screens and larger */
+@media screen and (min-width: 1225px) {
+    .hero-section .sec-2 {
+        width: 40%;
+        height: auto;
+        margin: 0;
+    }
+}
+
+/* btn styles  */
+.btn {
+    display: flex;
+    margin-right: 20px;
+    padding: .5em 1em;
+    border-radius: var(--border-radius);
+    width: fit-content;
+    font-size: 1em;
+}
+
+.btn.btn-primary {
+    background-color: var(--primary);
+    color: var(--white);
+    border: 1px solid var(--primary);
+}
+
+.btn.btn-primary:hover {
+    background-color: var(--text);
+    border: 1px solid var(--text);
+}
+
+.btn.btn-border {
+    background-color: var(--white);
+    color: var(--text);
+    border: 3px solid var(--text);
+}
+
+.btn.btn-border:hover {
+    background-color: var(--text);
+    color: var(--white);
+    border: 3px solid var(--text);
+}
+
+/* hosting section styles  */
+.hosting-section {
+    padding-bottom: 0;
+}
+
+.hosting-section .content {
+    width: 100%;
+    padding-bottom: 0;
+}
+
+.hosting-section .content h3 {
+    margin-bottom: 1rem;
+}
+
+.hosting-section .content p {
+    font-size: 1em;
+}
+
+.hosting-section .logos {
+    width: 100%;
+    margin-top: 2em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.hosting-section .logos img {
+    width: 30%;
+    height: fit-content;
+    margin-bottom: 1em;
+}
+
+/* medium size screens (tablets)and larger */
+@media screen and (min-width: 768px) {
+    .hosting-section .logos {
+        justify-content: flex-start;
+    }
+
+    .hosting-section .logos img {
+        width: auto;
+        margin: 0 1rem;
+        margin-bottom: 1em;
+    }
+}
+
+/* large screens and larger */
+@media screen and (min-width: 1225px) {
+    .hosting-section .container {
+        display: flex;
+    }
+
+    .hosting-section .container .content {
+        width: 50%;
+    }
+
+    .hosting-section .content p {
+        width: 90%;
+    }
+
+    .hosting-section .logos {
+        width: 45%;
+        justify-content: flex-start;
+    }
+
+    .hosting-section .logos img {
+        width: auto;
+        margin: 0 1rem;
+        margin-bottom: 1em;
+    }
+}
+/* benefits section styles  */
+.benefits-section .container .item {
+    width: 100%;
+    margin-bottom: 2em;
+}
+
+.benefits-section .container .item img {
+    width: 80px;
+    margin-bottom: .5rem;
+}
+
+.benefits-section .container .item h5 {
+    font-size: 1.5em;
+    margin-bottom: .3em;
+}
+
+.benefits-section .container .item p {
+    font-size: 1em;
+}
+
+.benefits-section .container .item:last-child {
+    margin-bottom: 0;
+}
+
+/* medium size screens (tablets)and larger */
+@media screen and (min-width: 768px) {
+    .benefits-section .container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2em
+    }
+}
+
+/* large screens and larger */
+@media screen and (min-width: 1225px) {
+    .benefits-section .container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2em
+    }
+
+    .benefits-section .container .item {
+        text-align: center;
+    }
+
+    .benefits-section .container .item h5 {
+        font-size: 1.3em;
+    }
+
+    .benefits-section .container .item p {
+        font-size: .9em;
+    }
+}
+
+/* pricing section   */
+.container  .top {
+    text-align: center;
+}
+
+.pricing-section  .top h3 {
+    font-weight: 600;
+}
+
+.pricing-section .container .top p {
+    margin: 0;
+    font-size: 1.3em;
+    line-height: 1.2;
+    margin-top: 1em;
+}
+
+.pricing-section  .toggler-con {
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    margin: 1em auto;
+    position: relative;
+}
+
+.pricing-section .toggler-con::after {
+    content: '20% discount';
+    display: block;
+    left: 50%;
+    top: 110%;
+    transform: translate(-50%, 10%);
+    position: absolute;
+    background-color: var(--yellow);
+    color: var(--text);
+    width: 60%;
+    text-align: center;
+    border-radius: 15px;
+}
+
+.pricing-section .toggler-con .toggler {
+    width: 60px;
+    height: 30px;
+    background-color: var(--primary);
+    border-radius: 50px;
+    margin: 0 1em;
+    position: relative;
+    cursor: pointer;
+}
+
+.pricing-section .toggler-con .toggler-sub {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    transform: scale(.7);
+    background-color: var(--white);
+    border-radius: 50%;
+    left: 0;
+}
+
+.pricing-section .toggler-con .toggler.toggle .toggler-sub {
+    left: calc(100% - 30px);
+}
+
+.pricing-section .toggler-con .time {
+    font-size: 1.1em;
+}
+
+
+.pricing-section nav {
+    width: 100%;
+    margin: 3em 0;
+}
+
+.pricing-section nav ul {
+    width: 100%;
+    display: flex;
+    border-bottom: 2px solid var(--light-gray);
+}
+
+.pricing-section nav li {
+    padding: .5em;
+    color: var(--text);
+    position: relative;
+    display: block;
+    cursor: pointer;
+    font-size: 1em;
+    width: 50%;
+    text-align: center;
+    font-weight: 600;
+}
+
+.pricing-section nav li:hover {
+    background-color: var(--primary-light);
+}
+
+.pricing-section nav li::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background-color: var(--light-gray);
+}
+
+.pricing-section nav li.active,
+.pricing-section nav li.active:hover {
+    color: var(--primary);
+    background-color: var(--white);
+}
+
+.pricing-section nav li.active::after,
+.pricing-section nav li.active:hover:after {
+    background-color: var(--primary);
+}
+
+.pricing-section nav li:hover::after {
+    background-color: var(--primary-light);
+}
+
+#annually {
+    display: none;
+}
+
+.pricing-section .content-sub {
+    display: none;
+}
+
+.pricing-section .content-sub.active {
+    display: block;
+}
+
+.pricing-section .plans .plan {
+    width: 100%;
+    height: auto;
+    padding: 2rem 1rem;
+    border: 2px solid var(--light-gray);
+    border-radius: var(--border-radius);
+    margin-bottom: 2em;
+}
+
+.pricing-section .plans .plan h4 {
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+.pricing-section .plans .plan .price {
+    margin: 2em 0;
+}
+
+.pricing-section .plans .plan .price h3 {
+    font-size: 2.5em;
+    font-weight: 700;
+}
+
+.pricing-section .plans .plan .btn {
+    width: 100%;
+    text-align: center;
+}
+
+.pricing-section .plans .plan ul {
+    margin-top: 2em;
+}
+
+.pricing-section .plans .plan ul li {
+    color: var(--text-light);
+    font-size: 1em;
+    padding-left: 2em;
+    margin-bottom: 1em;
+    position: relative;
+}
+
+.pricing-section .plans .plan ul li::before {
+    content: url('../images/icons/check.svg');
+    position: absolute;
+    left: 0;
+}
+
+/* medium size screens (tablets)and larger */
+@media screen and (min-width: 768px) {
+    .pricing-section .toggler-con .time {
+        font-size: 1.2em;
+    }
+
+    .pricing-section .toggler-con::after {
+        left: 110%;
+        top: 50%;
+        transform: translate(0%, -50%);
+    }
+
+    .pricing-section .plans {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1em;
+    }
+}
+
+/* large screens and larger */
+@media screen and (min-width: 1225px) {
+    .pricing-section .toggler-con .time {
+        font-size: 1.3em;
+    }
+
+    .pricing-section .plans {
+        gap: 3em;
+    }
+}
+
+
+
+
+
+
+
+
