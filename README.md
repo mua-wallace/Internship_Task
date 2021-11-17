@@ -16,13 +16,13 @@ durée : 4 jours
 # Run locally
 Clone repo
 
-``` ```
+```https://github.com/mua-wallace/Internship_Task.git```
 
-```cd Dev-Exercises ```
+```cd Internship_Task ```
 
-Open with Dev-Exercises folder with any code editor of your choice 
+Open with Internship_Task folder with any code editor of your choice 
 ``` vs-code, sublime, atom etc ```
-Your can now reveal your web pages by opening each subfolder and opening the ```index.html``` of each  subfolder with any browser of your choice ``` chrome, FireFox, Safari  etc ```
+Your can now reveal the web pages by opening  ```index.html``` with a  browser of your choice ``` chrome, FireFox ```
 ### Bravooooooo!!!
 
 # Contributors
