@@ -498,7 +498,7 @@ header .nav-toggler.show span:last-child {
 
 /* large size screens and larger */
 @media screen and (min-width: 1225px) {
-    .hero-section .con {
+    .hero-section .container {
         display: flex;
     }
 
