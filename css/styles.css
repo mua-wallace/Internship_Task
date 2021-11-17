@@ -1096,7 +1096,6 @@ header .nav-toggler.show span:last-child {
 
 
 
-
 /* testimony styles  */
 .testimonies-section {
     width: 100%;
@@ -1106,7 +1105,7 @@ header .nav-toggler.show span:last-child {
 }
 
 .testimonies-sub {
-    widows: 100%;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
 }
@@ -1332,7 +1331,7 @@ header .nav-toggler.show span:last-child {
         margin-bottom: 0;
         width: 100%;
     }
-    .sec-1 .testimony:fist-child {
+    .sec-1 .testimony:first-child {
         width: 100%;
         margin-top: 0;
     }
