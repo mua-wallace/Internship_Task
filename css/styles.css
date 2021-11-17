@@ -27,6 +27,10 @@
 }
 
 
+html {
+    scroll-behavior: smooth;
+}
+
 
 body {
     font-size: 16px;
@@ -34,7 +38,42 @@ body {
     color: var(--text);
 }
 
+body::-webkit-scrollbar { 
+    width: 0.6em;
+}
 
+.container { 
+    margin: 0 auto;
+
+}
+
+/*  small screens */
+@media only screen and (max-width: 767px) {
+    .container { 
+        width: 90vw !important;
+    }
+}
+
+
+/* medium screens (tablets) */
+@media screen and (min-width: 768px) {
+    .container { 
+        width: 90vw;
+    }
+}
+/* large screens  */
+@media screen and (min-width: 1225px) {
+    .container { 
+        width: 1000px !important;
+    }
+}
+
+/* extra large screens  */
+@media screen and (min-width: 1445px) {
+    .container { 
+        width: 1300px !important;
+    }
+}
 
 /* Core styles  */
 h1,
@@ -64,10 +103,29 @@ h3 {
     line-height: 1.2;
 }
 
+/* large screens and larger */
+@media screen and (min-width: 1225px) {
+    h1 { 
+        font-size: 4em !important
+    }
+
+    h2 { 
+        font-size: 3.8em;
+    }
+    
+}
 p {
     font-size: 1em;
     line-height: 1.5;
     margin: 0;
+}
+
+/* medium size screens and larger */
+@media screen and (min-width: 768px) {
+    p { 
+        line-height: 2;
+    }
+
 }
 
 a {
@@ -82,10 +140,25 @@ section {
     padding: 3em 0;
 }
 
+/* extra small screens and larger */
+@media only screen and (max-width: 360px) {
+    section {
+        padding: 2em 0;
+    }
+}
 
 
+/* large screens and larger */
+@media screen and (min-width: 1225px) {
+    section {
+        padding: 5em 0;
+    }
+}
 
+
+/* header styles */
 header {
+    width: 100%;
     height: 50px;
     background-color: var(--white);
     position: fixed;
@@ -95,25 +168,25 @@ header {
     display: flex;
     align-items: center;
 }
- .container {
+
+ header .container {
     display: flex;
-    width: 80%;
     align-items: center;
     justify-content: space-between;
-    margin-left: 6em;
+
 }
 header .logo {
-    height: 25px;
+    height: 35px;
 }
+
 header nav {
     position: fixed;
     top: 50px;
-    left: -100%;
+    right: 100%;
     background-color: var(--white);
     height: calc(100% - 50px);
     z-index: 4;
     padding: 1em;
-    width: 80%;
     border-top: 1px solid var(--border-color);
 }
 
@@ -296,7 +369,7 @@ header .nav-toggler.show span:last-child {
     }
 }
 
-/* start of home / hero-section styles  */
+/* hero-section styles  */
 .hero-section {
     margin-top: 100px;
     margin-bottom: 3em;
@@ -450,7 +523,7 @@ header .nav-toggler.show span:last-child {
 
 .hero-section .sec-2 img {
     width: 100%;
-    /* display: none; */
+  
 }
 
 .hero-section .sec-2 img.abstract {
@@ -499,10 +572,9 @@ header .nav-toggler.show span:last-child {
     }
 }
 
-/* btn styles  */
+/* button styles  */
 .btn {
-    display: flex;
-    margin-right: 20px;
+    display: block;
     padding: .5em 1em;
     border-radius: var(--border-radius);
     width: fit-content;
@@ -523,14 +595,15 @@ header .nav-toggler.show span:last-child {
 .btn.btn-border {
     background-color: var(--white);
     color: var(--text);
-    border: 3px solid var(--text);
+    border: 2px solid var(--text);
 }
 
 .btn.btn-border:hover {
     background-color: var(--text);
     color: var(--white);
-    border: 3px solid var(--text);
+    border: 2px solid var(--text);
 }
+
 
 /* hosting section styles  */
 .hosting-section {
@@ -555,7 +628,7 @@ header .nav-toggler.show span:last-child {
     margin-top: 2em;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .hosting-section .logos img {
@@ -584,7 +657,7 @@ header .nav-toggler.show span:last-child {
     }
 
     .hosting-section .container .content {
-        width: 50%;
+        width: 55%;
     }
 
     .hosting-section .content p {
@@ -602,6 +675,9 @@ header .nav-toggler.show span:last-child {
         margin-bottom: 1em;
     }
 }
+
+
+
 /* benefits section styles  */
 .benefits-section .container .item {
     width: 100%;
@@ -631,7 +707,7 @@ header .nav-toggler.show span:last-child {
     .benefits-section .container {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 2em
+        gap: 2em;
     }
 }
 
@@ -796,8 +872,7 @@ header .nav-toggler.show span:last-child {
     }
 }
 
-
-/* start of the pricing section styles  */
+/* pricing section styles  */
 .pricing-section .top {
     text-align: center;
 }
@@ -993,7 +1068,6 @@ header .nav-toggler.show span:last-child {
         gap: 1em;
     }
 }
-
 /* large screens and larger */
 @media screen and (min-width: 1225px) {
     .pricing-section .toggler-con .time {
@@ -1004,8 +1078,26 @@ header .nav-toggler.show span:last-child {
         gap: 3em;
     }
 }
+/* extra small screens and larger */
+@media only screen and (max-width: 360px) {}
 
-/* start of the testimony styles  */
+/* small screens and larger */
+@media only screen and (max-width: 767px) {}
+
+/* medium size screens (tablets)and larger */
+@media screen and (min-width: 768px) {}
+
+/* large screens and larger */
+@media screen and (min-width: 1225px) {}
+
+/* extra large screens and larger */
+@media screen and (min-width: 1445px) {}
+
+
+
+
+
+/* testimony styles  */
 .testimonies-section {
     width: 100%;
     height: fit-content;
@@ -1017,7 +1109,6 @@ header .nav-toggler.show span:last-child {
     widows: 100%;
     display: flex;
     flex-wrap: wrap;
-    /* background-color: red; */
 }
 
 .testimonies-sub .sec-1 {
@@ -1230,6 +1321,91 @@ header .nav-toggler.show span:last-child {
     }
 
 }
+@media screen and (min-width: 768px) and (max-width: 1023px){
+    .testimonies-sub .sec-1 { 
+        width: 100%;
+    }
+    .testimonies-sub .sec-2 { 
+        width: 100%;
+    }
+    .testimony { 
+        margin-bottom: 0;
+        width: 100%;
+    }
+    .sec-1 .testimony:fist-child {
+        width: 100%;
+        margin-top: 0;
+    }
+    .sec-2 .testimony:last-child { 
+        width: 100%;
+    }
+}
+
+@media screen  and (max-width: 767px) {
+    .testimonies-section { 
+        padding:3em 0
+    }
+    .testimonies-sub .sec-1 { 
+        width: 100%;
+    }
+    .testimonies-sub .sec-2 { 
+        width: 100%;
+    }
+    .testimony { 
+        margin-bottom: 0;
+        width: 100%;
+    }
+    .top {
+        width: 100%;
+        
+    }
+    .top h1 {
+        margin-left: 2rem;
+        margin-top: 2em;
+    }
+    .top p {
+        margin-left: 2rem;
+    }
+    .testimony { 
+        margin-bottom:2em
+    }
+
+    .testimony .user { 
+        width: 100%;
+        display: flex;
+        align-items: center;
+        font-size:1.3em;
+        font-weight:700;
+        margin-bottom: 1em;
+    }
+
+    .testimony .user img {
+        width: 50px;
+        height: 50px;
+    }
+    .testimony .content img {
+        width: 20px;
+        margin-right: .5rem;
+    }
+
+    .testimony .description {
+        margin-left: calc(20px + .5rem);
+
+    }
+    .sec-1 .testimony {
+        margin-right: 0;
+        width: 100%;
+    }
+
+    .sec-2 .testimony:first-child {
+        width: 100%;
+        margin-top: 0;
+    }
+    .sec-2 .testimony:last-child {
+        width: 100%;
+    }
+
+    }
 
 
 /* start of the footer styles  */
