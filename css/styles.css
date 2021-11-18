@@ -172,7 +172,7 @@ header {
  header .container {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: stretch;
 
 }
 header .logo {
@@ -219,6 +219,7 @@ header nav a {
 header .container > div {
     display: flex;
     align-items: center;
+
 }
 
 header .phone {
@@ -240,12 +241,12 @@ header .nav-toggler {
 header .nav-toggler span {
     display: block;
     width: 100%;
-    height: 12px;
+    height: 3px;
     background-color: var(--text);
     position: absolute;
 }
 
-header .nav-toggler.show {
+header .nav-toggler.show{
     width: 25px;
 
 }
@@ -263,8 +264,8 @@ header .nav-toggler span:last-child {
     bottom: 0;
 }
 header .nav-toggler.show span:first-child {
-    top: 35% ;
-    transform: rotate(45deg) !important;
+    top: 35%;
+    transform: rotate(-45deg) !important;
 }
 
 header .nav-toggler.show span:nth-child(2) {
@@ -275,7 +276,7 @@ header .nav-toggler.show span:nth-child(2) {
 
 header .nav-toggler.show span:last-child {
     bottom: 50% !important;
-    transform: rotate(-45deg);
+    transform: rotate(45deg);
 }
 
 /* medium size screens (tablets)and larger */
@@ -1045,7 +1046,7 @@ header .nav-toggler.show span:last-child {
 }
 
 .pricing-section .plans .plan ul li::before {
-    content: url('../images/icons/check.svg');
+    content: url('./images/icons/check.svg');
     position: absolute;
     left: 0;
 }
